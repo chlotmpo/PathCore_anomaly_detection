@@ -39,6 +39,6 @@ To run the whole program there are 2 possibilities :
 2. Download just the 3 following files : data_loading, utils.py, patchcore_model.py and the notebook patchcore_run_model.py. Then you can use directly the notebook to execute the program. The 3 first downloaded files must be accessible in the notebook. 
 
 ## Team 
-Maélis YONES 
-Chloé TEMPO
+Maélis YONES  
+Chloé TEMPO  
 Niccolo GIOVENALI
