@@ -14,7 +14,6 @@ from typing import Tuple
 from torch.utils.data import DataLoader
 from torchvision import models
 from utils import get_coreset_idx
-from neural_networks import ResNet50, WideResNet
 from sklearn.metrics import roc_auc_score
 
 class KNNExtractor(torch.nn.Module):
