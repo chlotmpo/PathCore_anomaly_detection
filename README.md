@@ -28,7 +28,18 @@ For this project, we tried to re-implement and understand all the speficities of
 ## Instructions of use 
 
 ### Requirements 
-First, some python requirements are needed, there are the following : 
+First, some python requirements are needed, see the following : 
+```
+wget==3.2
+matplotlib==3.3.4
+timm==0.4.12
+click==7.1.2
+torch==1.13.1
+numpy==1.19.5
+torchvision==0.14.1
+Pillow==9.3.0
+scikit_learn==0.24.2
+```
 
 ### Run the program
 To run the whole program there are 2 possibilities : 
