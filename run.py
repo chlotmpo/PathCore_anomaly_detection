@@ -1,9 +1,7 @@
-import pdb
 import warnings  
 from data_loading import MVTecDataset, _CLASSNAMES, _CLASSNAMES_1, _CLASSNAMES_2, _CLASSNAMES_3, _CLASSNAMES_4
 from patchcore_model import PatchCore
 from utils import print_results
-from multiprocessing import freeze_support
 
 from typing import List
 import torch
@@ -38,7 +36,6 @@ def run_model(model_name: str, classes: List):
 
     results = {}
 
-    freeze_support()
 
     nb_datasets = len(classes)
 

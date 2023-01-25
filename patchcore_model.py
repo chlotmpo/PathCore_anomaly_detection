@@ -3,13 +3,11 @@ This file contains the principal classes needed to perform the classification ta
 PatchCore represent the main class, as it is the main subject of this implementation, and is a subclass of the KNNExtractor class
 The PatchCore class overrides the fit and predict methods of the KNNExtractor class to perform a specific type of image classification using a coreset sampling approach.
 """
-import pdb
 import torch
 import torch.nn.functional as F
 from torch import tensor
 import numpy as np
 import timm
-import clip
 from typing import Tuple
 from torch.utils.data import DataLoader
 from torchvision import models
