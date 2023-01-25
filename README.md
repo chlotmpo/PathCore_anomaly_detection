@@ -11,8 +11,7 @@ PatchCore is an approach that has some specificities:
 
 For this project, we tried to re-implement and understand all the speficities of the PatchCore algorithm appraoch, using the [MV Tect Anomaly Detection](https://www.mvtec.com/company/research/datasets/mvtec-ad/) dataset to train and test it, a specific dataset designed to benchmark industrial anomaly detection approaches. 
 
-[Official implementation code](github.com/amazon-research/patchcore-inspection) 
- 
+[Official implementation code](github.com/amazon-research/patchcore-inspection)   
 [Easier implementation (with which we based our code) code](https://github.com/rvorias/ind_knn_ad)
 
 ![image](https://user-images.githubusercontent.com/76529865/214596320-fb91598d-4fe9-4d2d-886b-49216d621fef.png)
