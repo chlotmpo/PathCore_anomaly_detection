@@ -63,21 +63,13 @@ class KNNExtractor(torch.nn.Module):
         """
         super().__init__()
 
-
+        # Creation of the WideResNet50 neural network 
         self.featExtract_model = timm.create_model(
 			"wide_resnet50_2",
 			out_indices=output_indices,
 			features_only=True,
 			pretrained=True,
 		)
-
-        # The following lines represents a try to create another pre-trained model to compare the performances
-        # This one comes from CLIP image encoder and is an alternative of models pretrained on ImageNet
-        # Unfortunately we were not able to achieve the computation correctly on time, but we leave the line of our tryings.
-
-        # device = "cuda" if torch.cuda.is_available() else "cpu"
-        # self.featExtract_model, self.preprocess = clip.load("RN50x64", device=device, jit=False)
-
 
         for param in self.featExtract_model.parameters():
             param.requires_grad = False
@@ -107,10 +99,6 @@ class KNNExtractor(torch.nn.Module):
 
              # Extract the features from the input tensor using the feature extractor
             extracted_features = self.featExtract_model(tensor.to(self.device)) 
-
-            # The following 2 lines corresponds to the implementation of the CLIP image encoder pre-trained model
-            # extracted_features = self.featExtract_model.encode_image(tensor)
-            # print(extracted_features[0].shape)
         
         # If the 'pool_last' attribute is set to True, 
         if self.pool:
@@ -260,7 +248,6 @@ class PatchCore(KNNExtractor) :
         for sample in train_dl:
 
             # The features maps are extracte from the sample ( the self(sample) call the __call__ method from the KNNExtractor class)
-            # image_input = self.preprocess(sample[0]).unsqueeze(0).to(self.device) # This line was a try to implement the CLIP image encoder pretrained model
             feature_maps = self(sample[0])
 
 
