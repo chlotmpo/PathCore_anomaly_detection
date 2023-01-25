@@ -42,11 +42,14 @@ scikit_learn==0.24.2
 ```
 
 ### Run the program
+
 To run the whole program there are 2 possibilities : 
 
 1. Download all the needed files (data_loading.py, utils.py, patchcore_model.py and run.py). Then you can run directly the run.py file, it is required to have a system configured with GPU, since the computation is heavy. 
 
 2. Download just the 3 following files : data_loading, utils.py, patchcore_model.py and the notebook patchcore_run_model.py. Then you can use directly the notebook to execute the program. The 3 first downloaded files must be accessible in the notebook. 
+
+For the data loading part, change the variable "DATASETS_PATH" in the data_loading.py file, with the directory of where you locally have the dataset, in case you already have it, or where you want it to be stored, in case you don't have it already.
 
 ## Project report  
 
