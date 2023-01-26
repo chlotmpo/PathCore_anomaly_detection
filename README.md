@@ -55,7 +55,7 @@ For the data loading part, change the variable "DATASETS_PATH" in the data_loadi
 
 ## Project report  
 
-[See the report pdf](#s306595_s306625_s316359_project5.pdf)
+[See the report pdf](./s306595_s306625_s316359_project5.pdf/)
 
 ## Team 
 Maélis YONES - [@MaelisYones](https://github.com/MaelisYONES)  
