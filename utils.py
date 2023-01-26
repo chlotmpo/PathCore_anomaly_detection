@@ -3,11 +3,21 @@ import torch
 from torch import tensor
 from torchvision import transforms
 from sklearn import random_projection
+from sklearn import metrics
+import matplotlib.pyplot as plt
 
 def print_results(results : dict, method : str):
     
     print("\nFinal results of the computation")
     print(f"Average image rocauc: {results['average image rocauc']:.2f}")
+
+def plot_roc(y, pred, cls):
+    fpr, tpr, thresholds = metrics.roc_curve(y, pred)
+    roc_auc = metrics.auc(fpr, tpr)
+    display = metrics.RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, estimator_name=str(cls))
+    display.plot()
+    plt.show()
+    return
 
 
 def get_coreset_idx(

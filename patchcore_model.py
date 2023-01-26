@@ -11,7 +11,7 @@ import timm
 from typing import Tuple
 from torch.utils.data import DataLoader
 from torchvision import models
-from utils import get_coreset_idx
+from utils import get_coreset_idx, plot_roc
 from sklearn.metrics import roc_auc_score
 
 class KNNExtractor(torch.nn.Module):
@@ -109,48 +109,9 @@ class KNNExtractor(torch.nn.Module):
             extracted_features = [x.to("cpu") for x in extracted_features]
             
         return extracted_features
-    
-    def roc_auc(self,y_true, y_score):
-        """
-            This method is used to computed the roc metrics to evaluate the performance of the classification task
-            ROC AUC means Receiver Operating Characteristics - Area Under the Curve 
-            It is commonly used to evaluate the performance of a binary classification model. This metric is computed by plotting 
-            the True Positive Rate (tpr) against the False Positive Rate (fpr) at various classification treshold. The area under the curve 
-            is used as a summary of the model's performance. 
-            A perfect classifier is represented by an AUC of 1
-            This method return the value auc that corresponds at the area under the roc curve
-        """
-        # The first step is to create a list of pairs (y_true, y_score)
-        data = list(zip(y_true, y_score))
-        
-        # Then the data have to be sorted based on the key value
-        data = sorted(data, key=lambda x: x[1], reverse = True)
-        # data.sort(key=lambda x: x[1])
 
-        # Initialization of the variables representing the True Positive Rate (tpr) and the False Positive Rate (fpr)
-        tpr = 0
-        fpr = 0
-
-        # Initialization of the auc variable that will store the value of the area under the curve
-        auc = 0
-
-        # for i in range(len(data)):
-        for i, (y,s) in enumerate(data):
-
-            # If the true label is 1 the true positive rate is incremented
-            if y == 1:
-                tpr += 1
-            # If the true label is 0 the false positive rate is incremented
-            else:   
-                fpr += 1
-
-            if i < len(data) - 1 and s != data[i + 1][1]:
-                # The area under the curve is computed for this interval
-                auc += (fpr / (fpr + tpr)) * (data[i + 1][1] - s)
-
-        return auc
       
-    def evaluate(self, test_data: DataLoader) -> Tuple[float, float]:
+    def evaluate(self, test_data: DataLoader, cls) -> Tuple[float, float]:
         """
             The evaluate method is used in this class to evaluate the model performance 
             The roc_auc method is called and used in this method
@@ -177,6 +138,9 @@ class KNNExtractor(torch.nn.Module):
         # image_roc_auc = self.roc_auc(image_labels, image_predictions)
         print("Sklearn roc_auc metric computation loading ...")
         image_roc_auc = roc_auc_score(image_labels, image_predictions)
+        # plot the roc curve
+        plot_roc(image_labels, image_predictions, cls)
+
 
         # Finally, the output is the roc_auc value as a tuple
         return image_roc_auc   

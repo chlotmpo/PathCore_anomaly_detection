@@ -28,8 +28,8 @@ def create_model(model_name: str):
 def train_model(model, train_dataset):
     model.fit(train_dataset)
 
-def evaluate_model(model, test_dataset):
-    return model.evaluate(test_dataset)
+def evaluate_model(model, test_dataset, cls):
+    return model.evaluate(test_dataset, cls = cls)
 
 # Main method that will allow running the program
 def run_model(model_name: str, classes: List):
@@ -53,7 +53,7 @@ def run_model(model_name: str, classes: List):
         train_model(model, train_ds)
 
         # Use the test data to apply the trained model on it, try to classify it and evaluate the performance
-        image_rocauc = evaluate_model(model, test_ds)
+        image_rocauc = evaluate_model(model, test_ds, cls)
         
         print("Here are the test results on the dataset", cls)
         print("ROC_AUC metric :", image_rocauc)
