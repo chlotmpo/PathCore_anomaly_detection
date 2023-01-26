@@ -49,7 +49,7 @@ To run the whole program there are 2 possibilities :
 
 2. Download just the 3 following files : data_loading, utils.py, patchcore_model.py and the notebook patchcore_run_model.py. Then you can use directly the notebook to execute the program. The 3 first downloaded files must be accessible in the notebook. The notebook allow to use some additional code to plot and compare the roc_auc score obtained between the different datasets and the different choices made in the model parameter (variation in the value of f_coreset, the percentage of the tensors in the Memory Bank to keep).
 
-In the 2 options, the execution of the code will display the steps of the computation, the roc_auc score obtain at the end of the performance evaluation and a plot representing the ROC curve for the tested dataset. 
+In the 2 options, the execution of the code will display the steps of the computation, the roc_auc score obtained at the end of the performance evaluation and a plot representing the ROC curve for the tested dataset. 
 
 For the data loading part, change the variable "DATASETS_PATH" in the data_loading.py file, with the directory of where you locally have the dataset, in case you already have it, or where you want it to be stored, in case you don't have it already.
 
