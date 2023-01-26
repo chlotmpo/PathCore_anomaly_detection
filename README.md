@@ -17,13 +17,13 @@ For this project, we tried to re-implement and understand all the speficities of
 ![image](https://user-images.githubusercontent.com/76529865/214596320-fb91598d-4fe9-4d2d-886b-49216d621fef.png)
 
 ## Table of content 
-1. [MVTec image folder](#C_mvtec_anomaly_detection/bottle) : The folder that will contains the images once loaded in the system. This folder is here to show an example of the images under the label "bottle", with the different folders representing the good and anomalous images. 
-2. [Data Loading](#data_loading.py) : This python file represents the code allowing the loading of the MvTec Dataset
-3. [PatchCore Architecture](#patchcore_model.py) : This python file contains the code defining the PatchCore class and model architecture
-4. [Utils](#utils.py) : This python file contains some methods used in the PatchCore core algorithm
-5. [Run method](#run.py) : This python file is the main one to execute the whole program
-6. [Run notebook](#patchcore_run_notebook.ipynb) : This notebook allows to run the whole program too and show an exemple of an execution
-7. [Neural Networks](#neural_networks.py) : This python file contains code about the architecture of the WideResNet50 and the ResNet neural network. We experiment to implement them to better understand the architecture.
+1. [MVTec image folder](./C_mvtec_anomaly_detection/bottle/) : The folder that will contains the images once loaded in the system. This folder is here to show an example of the images under the label "bottle", with the different folders representing the good and anomalous images. 
+2. [Data Loading](./data_loading.py/) : This python file represents the code allowing the loading of the MvTec Dataset
+3. [PatchCore Architecture](./patchcore_model.py/) : This python file contains the code defining the PatchCore class and model architecture
+4. [Utils](./utils.py/) : This python file contains some methods used in the PatchCore core algorithm
+5. [Run method](./run.py/) : This python file is the main one to execute the whole program
+6. [Run notebook](./patchcore_run_notebook.ipynb/) : This notebook allows to run the whole program too and show an exemple of an execution
+7. [Neural Networks](./neural_networks.py/) : This python file contains code about the architecture of the WideResNet50 and the ResNet neural network. We experiment to implement them to better understand the architecture.
 
 ## Instructions of use 
 
