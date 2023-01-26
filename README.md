@@ -56,6 +56,6 @@ For the data loading part, change the variable "DATASETS_PATH" in the data_loadi
 ## Project report  
 
 ## Team 
-Maélis YONES  
-Chloé TEMPO - @chlotmpo
-Niccolo GIOVENALI - @NiccoloGiovenali
+Maélis YONES - [@MaelisYones](https://github.com/MaelisYONES)  
+Chloé TEMPO - [@chlotmpo](https://github.com/chlotmpo)  
+Niccolo GIOVENALI - [@NiccoloGiovenali](https://github.com/NiccoloGiovenali)
