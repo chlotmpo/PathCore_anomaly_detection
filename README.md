@@ -57,5 +57,5 @@ For the data loading part, change the variable "DATASETS_PATH" in the data_loadi
 
 ## Team 
 Maélis YONES  
-Chloé TEMPO  
-Niccolo GIOVENALI
+Chloé TEMPO - @chlotmpo
+Niccolo GIOVENALI - @NiccoloGiovenali
