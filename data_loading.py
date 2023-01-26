@@ -57,7 +57,6 @@ _CLASSNAMES_1 = [
 
 _CLASSNAMES_2 = [
     "grid",
-    "hazelnut",
     "leather",
     "metal_nut"
 ]
